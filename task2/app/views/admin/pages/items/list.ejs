@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title and Content Table</title>
+</head>
+<body>
+<%-    JSON.stringify(items)%>
+<!-- Phần bảng -->
+<table>
+    <thead>
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Nội dung</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% items.forEach((item, index) => { %>
+            <tr>
+                <td><a href="/admin/items/form/<%=item.id%>"><%= item.title%></a></td>
+                <td><%= item.content%></td>
+                <td><button ><a href="/admin/items/delete/<%=item.id%>"></a>Xóa</button></td>
+            </tr>
+        <% }) %>
+        <td><a href="/admin/items/form/"><button >Thêm</button></a></td>
+
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
